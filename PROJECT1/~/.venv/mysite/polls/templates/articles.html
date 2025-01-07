@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Articles</title>
+    <style>
+        .header {
+        position: fixed;
+        top: 10px;
+        left: 10px;
+        font-size: 16px;
+        color: #ffffff;
+        background-color: #007bff;
+        padding: 5px 15px;
+        border-radius: 5px;
+        font-weight: bold;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        li {
+            margin: 10px 0;
+            background-color: #f9f9f9;
+            padding: 15px;
+            border-radius: 6px;
+            transition: transform 0.2s;
+        }
+        li:hover {
+            transform: translateX(5px);
+            background-color: #e8e8e8;
+        }
+        a {
+            text-decoration: none;
+            color: #007bff;
+            font-weight: bold;
+            display: block;
+        }
+        a:hover {
+            color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        Hello, {{ user.username }}!
+    </div>
+    <div class="container">
+        <h1>Articles</h1>
+        <ul>
+            {% for article in articles %}
+                <li>
+                    <a href="/articles/{{ article.id }}/" class="article-link">{{ article.title }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>
