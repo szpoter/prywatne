@@ -14,31 +14,22 @@ def register(request):
     if request.method == 'POST':
         username = request.POST['username']
         password = request.POST['password']
-        
-        # Sprawdź, czy użytkownik już istnieje
         if User.objects.filter(username=username).exists():
-            return render(request, 'register.html', {'error': 'Username already exists. Please choose another one.'})
-        
-        try:
-            user = User.objects.create_user(username=username, password=password)
-            user.save()
-            login(request, user)  # Automatycznie logujemy nowego użytkownika
-            return redirect('articles')
-        except IntegrityError:
-            return render(request, 'register.html', {'error': 'An error occurred. Please try again.'})
+            return render(request, 'register.html', {'error': 'Username already exists'})
+        user = User.objects.create_user(username=username, password=password)
+        login(request, user)
+        return redirect('homepage')
     return render(request, 'register.html')
-
 
 def login_user(request):
     if request.method == 'POST':
         username = request.POST['username']
         password = request.POST['password']
         user = authenticate(request, username=username, password=password)
-        if user is not None:
+        if user:
             login(request, user)
-            return redirect('articles')
-        else:
-            return render(request, 'login.html', {'error': 'Invalid credentials'})
+            return redirect('homepage')
+        return render(request, 'login.html', {'error': 'Invalid credentials'})
     return render(request, 'login.html')
 
 def articles(request):
@@ -82,3 +73,29 @@ def article_detail(request, id):
             return HttpResponse("<h1>Article not found</h1>", status=404)
     else:
         return HttpResponse("<h1>Article not found</h1>", status=404)
+    
+    from django.shortcuts import render, get_object_or_404
+from .models import Article
+
+def about_us(request):
+    return render(request, 'about_us.html')
+
+def news_from_szczecin(request):
+    return render(request, 'news_from_szczecin.html')
+
+def contact_info(request):
+    return render(request, 'contact_info.html')
+
+def search_article(request):
+    query = request.GET.get('query', '')
+    articles = Article.objects.filter(title__icontains=query) if query else []
+    return render(request, 'search_results.html', {'articles': articles, 'query': query})
+
+def homepage(request):
+    return render(request, 'homepage.html')
+
+from django.contrib.auth import logout
+
+def logout_user(request):
+    logout(request)
+    return redirect('login')
