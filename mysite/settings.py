@@ -25,7 +25,8 @@ SECRET_KEY = 'django-insecure-9^-2)s1j*$+wn+4kod2l8kfbl8upg!p=1en2aq2g#m-gh^rtst
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['szczecin-times.onrender.com']
+
 
 
 # Application definition
