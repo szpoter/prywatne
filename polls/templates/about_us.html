@@ -66,66 +66,47 @@
             border: 2px solid #ddd;
             box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
         }
+
+        .about-us-container {
+            position: relative; /* Kontener musi mieć pozycję względną */
+            overflow: hidden; /* Ukrycie przesuwającego się obrazu */
+            text-align: center; /* Wyrównanie tekstu, jeśli potrzebne */
+        }
+        
+        .about-us-image {
+            position: absolute; /* Zapobiega poruszaniu się obrazu */
+            top: 0;
+            right: 0;
+            height: 100%; /* Dopasowanie do kontenera */
+            width: auto; /* Zachowanie proporcji obrazu */
+            max-width: none;
+        }
+        
+        .about-us-text {
+            position: relative; /* Tekst nie będzie zasłonięty */
+            z-index: 2; /* Wyżej niż obraz */
+            color: #fff; /* Widoczny tekst */
+            background: rgba(0, 0, 0, 0.5); /* Opcjonalne tło pod tekstem */
+            padding: 10px; /* Margines dla lepszej widoczności */
+        }
+        
         @media (max-width: 768px) {
-            body {
-                padding: 5px;
+            .about-us-container {
+                height: auto; /* Automatyczna wysokość kontenera */
             }
         
-            .container {
-                padding: 10px;
-                max-width: 100%;
+            .about-us-image {
+                height: auto; /* Obraz dopasuje się do kontenera */
+                width: 100%; /* Wypełnia szerokość */
+                top: unset; /* Resetowanie ustawień pozycji */
+                right: unset;
             }
         
-            h1 {
-                font-size: 24px;
-            }
-        
-            h2 {
-                font-size: 20px;
-            }
-        
-            h5 {
-                font-size: 16px;
-            }
-        
-            .like-dislike-container {
-                flex-direction: column;
-                align-items: center;
-            }
-        
-            .like-dislike-buttons button {
-                width: 100%;
-                margin: 5px 0;
+            .about-us-text {
+                font-size: 14px; /* Zmniejsz tekst dla małych ekranów */
             }
         }
         
-        @media (max-width: 480px) {
-            h1 {
-                font-size: 18px;
-            }
-        
-            h2 {
-                font-size: 16px;
-            }
-        
-            h5 {
-                font-size: 14px;
-            }
-        
-            .like-dislike-container span {
-                font-size: 14px;
-            }
-        
-            .navbar {
-                flex-direction: column;
-                align-items: center;
-            }
-        
-            .navbar a {
-                font-size: 14px;
-                margin: 5px 0;
-            }
-        }
         
     </style>
 </head>
@@ -134,14 +115,14 @@
 
     <img src="/polls/photos/about_us_photo.jpg" alt="About Us Image" class="top-right-image">
 
-
-    <div class="content">
-        <h1>About Me</h1>
-        <p>
-           Hello, welcome to my page. My name is Nikodem Kasprzak I study Programming in SCI Szczecin and here I'll share news from our beloved city.
-           Szczecin is very important for me as I was born and raised here. I decided to create a website for englishspeakers as I haven't seen any type of news about the city in english.
-            Every important information from Szczecin and nearby cities will be shared in here. I hope that You'll enjoy my articles and for any questions please contact me <a src="contact_info.html">here</a>
-        </p>
+    <div class="about-us-container">
+        <img src="path/to/your/image.jpg" alt="About Us Image" class="about-us-image">
+        <div class="about-us-text">
+            <h1>About Us</h1>
+            <p>Hello, welcome to my page. My name is Nikodem Kasprzak I study Programming in SCI Szczecin and here I'll share news from our beloved city.
+                Szczecin is very important for me as I was born and raised here. I decided to create a website for englishspeakers as I haven't seen any type of news about the city in english.
+                 Every important information from Szczecin and nearby cities will be shared in here. I hope that You'll enjoy my articles and for any questions please contact me <a src="contact_info.html">here</a></p>
+        </div>
     </div>
 </body>
 </html>
