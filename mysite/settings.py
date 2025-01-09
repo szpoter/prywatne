@@ -78,18 +78,22 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
+import os
+from urllib.parse import urlparse
 
+url = urlparse(os.getenv('DATABASE_URL'))
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'your_database',  # Nazwa bazy danych
-        'USER': 'your_username',  # Użytkownik bazy danych
-        'PASSWORD': 'your_password',  # Hasło do bazy danych
-        'HOST': 'host.render.com',  # Host bazy danych
-        'PORT': '5432',  # Port PostgreSQL
+        'NAME': url.path[1:],
+        'USER': url.username,
+        'PASSWORD': url.password,
+        'HOST': url.hostname,
+        'PORT': url.port,
     }
 }
+
 
 
 STATIC_URL = '/static/'
