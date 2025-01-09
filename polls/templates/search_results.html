@@ -46,6 +46,66 @@
             font-size: 18px;
             color: #666;
         }
+        @media (max-width: 768px) {
+            body {
+                padding: 5px;
+            }
+        
+            .container {
+                padding: 10px;
+                max-width: 100%;
+            }
+        
+            h1 {
+                font-size: 24px;
+            }
+        
+            h2 {
+                font-size: 20px;
+            }
+        
+            h5 {
+                font-size: 16px;
+            }
+        
+            .like-dislike-container {
+                flex-direction: column;
+                align-items: center;
+            }
+        
+            .like-dislike-buttons button {
+                width: 100%;
+                margin: 5px 0;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 18px;
+            }
+        
+            h2 {
+                font-size: 16px;
+            }
+        
+            h5 {
+                font-size: 14px;
+            }
+        
+            .like-dislike-container span {
+                font-size: 14px;
+            }
+        
+            .navbar {
+                flex-direction: column;
+                align-items: center;
+            }
+        
+            .navbar a {
+                font-size: 14px;
+                margin: 5px 0;
+            }
+        }
     </style>
 </head>
 <body>
