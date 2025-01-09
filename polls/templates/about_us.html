@@ -57,44 +57,109 @@
             max-width: 600px;
         }
 
-
-        
-        .about-us-image {
+        .top-right-image {
             position: absolute;
-            top: 0;
-            right: 0;
-            height: 100%; 
-            width: auto;
-            max-width: none;
+            top: 20px;
+            left: 20px;
+            width: 350px;
+            height: auto;
+            max-width: 100%;
+            border: 2px solid #ddd;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
         }
-        
-
         
         @media (max-width: 768px) {
-            .about-us-image {
-                height: auto; 
-                width: 100%; 
-                top: unset; 
-                right: unset;
+            .top-right-image {
+                width: 250px;
+                top: 10px;
+                left: 10px;
             }
-        
-
         }
         
+        @media (max-width: 480px) {
+            .top-right-image {
+                width: 200px;
+                top: 5px;
+                left: 5px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            body {
+                padding: 5px;
+            }
+        
+            .container {
+                padding: 10px;
+                max-width: 100%;
+            }
+        
+            h1 {
+                font-size: 24px;
+            }
+        
+            h2 {
+                font-size: 20px;
+            }
+        
+            h5 {
+                font-size: 16px;
+            }
+        
+            .like-dislike-container {
+                flex-direction: column;
+                align-items: center;
+            }
+        
+            .like-dislike-buttons button {
+                width: 100%;
+                margin: 5px 0;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 18px;
+            }
+        
+            h2 {
+                font-size: 16px;
+            }
+        
+            h5 {
+                font-size: 14px;
+            }
+        
+            .like-dislike-container span {
+                font-size: 14px;
+            }
+        
+            .navbar {
+                flex-direction: column;
+                align-items: center;
+            }
+        
+            .navbar a {
+                font-size: 14px;
+                margin: 5px 0;
+            }
+        }
         
     </style>
 </head>
 <body>
     {% include 'navbar.html' %}
 
+    <img src="/polls/photos/about_us_photo.jpg" alt="About Us Image" class="top-right-image">
 
 
-    <div class="container">
-        <img src="/polls/photos/about_us_photo.jpg" alt="About Us Image" class="about-us-image">
-            <h1>About Us</h1>
-            <p>Hello, welcome to my page. My name is Nikodem Kasprzak I study Programming in SCI Szczecin and here I'll share news from our beloved city.
-                Szczecin is very important for me as I was born and raised here. I decided to create a website for englishspeakers as I haven't seen any type of news about the city in english.
-                 Every important information from Szczecin and nearby cities will be shared in here. I hope that You'll enjoy my articles and for any questions please contact me <a src="contact_info.html">here</a></p>
+    <div class="content">
+        <h1>About Me</h1>
+        <p>
+           Hello, welcome to my page. My name is Nikodem Kasprzak I study Programming in SCI Szczecin and here I'll share news from our beloved city.
+           Szczecin is very important for me as I was born and raised here. I decided to create a website for englishspeakers as I haven't seen any type of news about the city in english.
+            Every important information from Szczecin and nearby cities will be shared in here. I hope that You'll enjoy my articles and for any questions please contact me <a src="contact_info.html">here</a>
+        </p>
     </div>
 </body>
 </html>
