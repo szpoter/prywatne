@@ -131,11 +131,11 @@ body {
             <span class="dislike-count">👎 Dislikes: {{ article.total_dislikes }}</span>
         </div>
         <div class="like-dislike-buttons">
-            <form action="{% url 'like_article' id %}" method="post">
+            <form action="{% url 'like_article' article.id %}" method="post">
                 {% csrf_token %}
                 <button type="submit">👍 Like</button>
             </form>
-            <form action="{% url 'dislike_article' id %}" method="post">
+            <form action="{% url 'dislike_article' article.id %}" method="post">
                 {% csrf_token %}
                 <button type="submit">👎 Dislike</button>
             </form>

@@ -143,22 +143,21 @@
             Kępa Parnicka’s transformation is more than just a local project; it reflects Szczecin’s broader ambition to modernize while preserving its historical roots. The island stands as a symbol of the city’s forward-thinking approach to urban development and its ability to adapt to the needs of a changing world.</p>
         <p>Kępa Parnicka's transformation represents Szczecin's forward-thinking approach to urban planning, blending modern architecture with respect for the city's historical heritage.</p>
         <a href="/articles/" class="back-link">Back to Articles</a>
-    </div>
-    <div class="like-dislike-container">
-        <div>
-            <span class="like-count">👍 Likes: {{ article.total_likes }}</span>
-            <span class="dislike-count">👎 Dislikes: {{ article.total_dislikes }}</span>
+        <div class="like-dislike-container">
+            <div>
+                <span class="like-count">👍 Likes: {{ article.total_likes }}</span>
+                <span class="dislike-count">👎 Dislikes: {{ article.total_dislikes }}</span>
+            </div>
+            <div class="like-dislike-buttons">
+                <form action="{% url 'like_article' article.id %}" method="post">
+                    {% csrf_token %}
+                    <button type="submit">👍 Like</button>
+                </form>
+                <form action="{% url 'dislike_article' article.id %}" method="post">
+                    {% csrf_token %}
+                    <button type="submit">👎 Dislike</button>
+                </form>
+            </div>
         </div>
-        <div class="like-dislike-buttons">
-            <form action="{% url 'like_article' id %}" method="post">
-                {% csrf_token %}
-                <button type="submit">👍 Like</button>
-            </form>
-            <form action="{% url 'dislike_article' id %}" method="post">
-                {% csrf_token %}
-                <button type="submit">👎 Dislike</button>
-            </form>
-        </div>
-    </div>
 </body>
 </html>

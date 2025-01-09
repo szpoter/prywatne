@@ -48,11 +48,14 @@ from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse
 from .models import Article
 
+from django.shortcuts import render, get_object_or_404
+from .models import Article
+
 def article_detail(request, id):
-    # Pobierz artykuł z bazy danych na podstawie ID
+    # Pobieramy artykuł z bazy danych
     article = get_object_or_404(Article, id=id)
 
-    # Mapowanie ID artykułów na pliki HTML
+    # Mapa ID artykułów do nazw szablonów
     articles_files = {
         1: 'argument1.html',
         2: 'argument2.html',
@@ -61,15 +64,13 @@ def article_detail(request, id):
         5: 'argument5.html',
     }
 
-    # Pobierz nazwę pliku dla ID
+    # Pobieramy odpowiedni plik na podstawie ID
     file_name = articles_files.get(id)
-
     if file_name:
-        # Renderuj plik HTML z danymi artykułu
         return render(request, f'articles/{file_name}', {'article': article})
     else:
-        # Jeśli nie ma pliku dla danego ID, zwróć błąd 404
         return HttpResponse("<h1>Article not found</h1>", status=404)
+
 
 def about_us(request):
     return render(request, 'about_us.html')
