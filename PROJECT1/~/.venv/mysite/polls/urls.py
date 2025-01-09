@@ -1,6 +1,10 @@
 from django.urls import path
 from . import views
 
+from django.conf import settings
+from django.conf.urls.static import static
+
+
 urlpatterns = [
     path('', views.index, name='index'),
     path('register/', views.register, name='register'),
@@ -13,4 +17,10 @@ urlpatterns = [
     path('search-article/', views.search_article, name='search_article'),
     path('homepage/', views.homepage, name='homepage'),
     path('logout/', views.logout_user, name='logout'),
+    path('articles/<int:id>/like/', views.like_article, name='like_article'),
+    path('articles/<int:id>/dislike/', views.dislike_article, name='dislike_article'),
+    path('contact-info/', views.contact_info, name='contact_info'),
 ]
+
+urlpatterns += static('/polls/photos/', document_root='polls/photos/')
+urlpatterns += static('/polls/icons/', document_root='polls/icons/')

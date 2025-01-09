@@ -1,9 +1,12 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Kolumba Street is Open Now</title>
+    <div class="title-container" style="background-image: url('/polls/photos/1.jpg');">
+    </div>
+    <small size="1px">Photo source: <a href="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwiadomosci.szczecin.eu%2Fartykul%2Finwestycje%2Fna-kolumba-tez-widac-ruch&psig=AOvVaw3_870L_9C89yk_Exz9_yfL&ust=1736444664975000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCMjux87W5ooDFQAAAAAdAAAAABAb">here</a></small>
     <style>
-        body {
+body {
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
@@ -15,7 +18,7 @@
             left: 10px;
             font-size: 16px;
             color: #ffffff;
-            background-color: #007bff;
+            background-color: hwb(0 0% 100%);
             padding: 5px 15px;
             border-radius: 5px;
             font-weight: bold;
@@ -30,14 +33,19 @@
             padding: 20px;
         }
         h1 {
-            color: #333;
+            font-family: 'Georgia', 'Times New Roman', Times, serif;
+            font-size: 42px;
+            font-weight: bold;
+            line-height: 1.2;
+            letter-spacing: 0.5px;
             text-align: center;
-            font-size: 36px;
+            color: #333;
         }
         p {
             font-size: 18px;
             line-height: 1.6;
             color: #555;
+            text-align: justify;
         }
         a.back-link {
             text-decoration: none;
@@ -50,17 +58,89 @@
         a.back-link:hover {
             color: #0056b3;
         }
+
+        .like-count, .dislike-count {
+            font-size: 18px;
+            margin-right: 20px;
+            font-weight: bold;
+        }
+
+        .like-count {
+            color: green;
+        }
+
+        .dislike-count {
+            color: red;
+        }
+
+        .like-dislike-buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .like-dislike-buttons form {
+            margin: 0;
+        }
+
+        .like-dislike-buttons button {
+            background-color: #f4f4f4;
+            border: 1px solid #ddd;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .like-dislike-buttons button:hover {
+            background-color: #e0e0e0;
+        }
+        
+        .title-container {
+            background-image: url("{% static 'polls/photos/1.jpg' %}");
+            background-size: cover;
+            background-position: center;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+        h5 {
+            font-family: 'Georgia', 'Times New Roman', Times, serif;
+            font-size: 21px;
+            font-weight: bold;
+            line-height: 1.2;
+            letter-spacing: 0.5px;
+            text-align: center;
+            color: #333;
+        }
+
+
     </style>
 </head>
 <body>
-
     <div class="container">
         <h1>Kolumba Street is Open Now</h1>
-        <p>After years of construction and planning, Kolumba Street in Szczecin is officially open to traffic. This vital thoroughfare, which has been under renovation to modernize its infrastructure, now features wider lanes, improved pedestrian walkways, and enhanced public transport access. Kolumba Street serves as a critical connection between the city center and the industrial areas of Szczecin, making its reopening a major milestone for residents and businesses alike.</p>
-        <p>Key features of the renovation include state-of-the-art drainage systems to prevent flooding, energy-efficient LED street lighting, and new landscaping that aligns with Szczecin's green city initiative. Local businesses along Kolumba Street are already reporting an uptick in customers due to the improved accessibility.</p>
-        <p>City officials celebrated the reopening with a ribbon-cutting ceremony, where Mayor Piotr Krzystek emphasized the importance of this project in enhancing urban mobility and economic growth. Residents have praised the changes, especially the dedicated cycling paths that encourage eco-friendly transportation.</p>
-        <p>Kolumba Street is expected to become a model for future infrastructure projects in Szczecin, setting a high standard for quality and sustainability.</p>
-        <a href="/articles/" class="back-link">Back to Articles</a>
+<p> Kolumba Street in Szczecin has long been one of the most anticipated infrastructure projects in the region. After years of planning, construction, and delays, this critical road is finally open to the public, marking a significant milestone in the city's urban development. </p> <h5>A Brief History of the Project</h5> <p> The reconstruction of Kolumba Street began as part of a broader initiative to modernize Szczecin’s road network and improve traffic flow between key parts of the city. The original road, which had become increasingly dilapidated over the years, was a source of frustration for residents and businesses alike. </p> <p> Construction officially commenced in 2018, with an initial timeline of three years. However, the project faced numerous challenges, including unexpected structural issues, changes in project scope, and interruptions caused by the COVID-19 pandemic. As a result, the completion date was pushed back multiple times, finally concluding in late 2024. </p> <h5>Key Features of the New Kolumba Street</h5> <p> The new Kolumba Street boasts several features designed to improve traffic efficiency and safety. With two lanes in each direction, it significantly reduces congestion during peak hours. Additionally, pedestrian walkways and dedicated bike lanes provide safe and convenient options for non-motorized users. </p> <p> Modern infrastructure upgrades include advanced drainage systems to prevent flooding, energy-efficient LED street lighting, and durable paving materials. The addition of landscaped green spaces enhances the area’s aesthetic appeal and contributes to environmental sustainability. </p> <h5>Construction Challenges and Timeline</h5> <p> The road’s reconstruction was not without its challenges. Soil instability in some sections required additional foundational work, delaying the project’s progress. Moreover, the COVID-19 pandemic caused disruptions in material supply chains and workforce availability. Budget overruns further complicated the project, with final costs exceeding initial estimates by approximately 15%. </p> <p> Despite these setbacks, the city remained committed to the project. After years of persistence and adjustments to the original plan, the road was finally opened to traffic in December 2024. </p> <h5>What This Means for Szczecin</h5> <p> The opening of Kolumba Street is more than just a road project; it symbolizes Szczecin’s commitment to modernizing its infrastructure and improving the quality of life for its residents. The improved road network not only reduces travel times but also facilitates better logistics for local businesses. </p> <p> Residents have already praised the road for its functionality and design. One commuter remarked, “It was worth the wait. The new road has made my daily commute so much easier.” Local business owners have also noted increased traffic and accessibility, predicting positive economic impacts in the area. </p> <h5>Looking Ahead</h5> <p> Kolumba Street’s completion marks the beginning of a new chapter for Szczecin’s urban landscape. It serves as a model for future infrastructure projects, demonstrating the importance of persistence, innovation, and community engagement. As Szczecin continues to expand, Kolumba Street stands as a shining example of what the city can achieve through determined efforts and careful planning. </p><a href="/articles/" class="back-link">Back to Articles</a>
+    </div>
+
+    <div class="like-dislike-container">
+        <div>
+            <span class="like-count">👍 Likes: {{ article.total_likes }}</span>
+            <span class="dislike-count">👎 Dislikes: {{ article.total_dislikes }}</span>
+        </div>
+        <div class="like-dislike-buttons">
+            <form action="{% url 'like_article' id %}" method="post">
+                {% csrf_token %}
+                <button type="submit">👍 Like</button>
+            </form>
+            <form action="{% url 'dislike_article' id %}" method="post">
+                {% csrf_token %}
+                <button type="submit">👎 Dislike</button>
+            </form>
+        </div>
     </div>
 </body>
 </html>
+

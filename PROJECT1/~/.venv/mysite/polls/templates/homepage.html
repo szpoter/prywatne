@@ -1,11 +1,111 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Homepage</title>
+  
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        .navbar {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+
+        .navbar a:hover {
+            text-decoration: underline;
+        }
+
+        .header {
+            text-align: center;
+            padding: 50px 20px;
+            background-image: url("{% static 'polls/photos/6.jpg' %}");
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        .header h1 {
+            font-size: 48px;
+            margin: 0;
+        }
+
+        .header p {
+            font-size: 20px;
+            margin-top: 10px;
+            line-height: 1.6;
+        }
+
+        .latest-article {
+            max-width: 800px;
+            margin: 50px auto;
+            background: white;
+            padding: 20px;
+            box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        .latest-article h2 {
+            font-size: 24px;
+            margin: 0 0 10px 0;
+        }
+
+        .latest-article a {
+            display: block;
+            text-decoration: none;
+            color: #007bff;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .latest-article a:hover {
+            color: #0056b3;
+        }
+    </style>
 </head>
 <body>
-    {% include 'navbar.html' %}
-    <h1>Welcome to Szczecin News</h1>
-    <p>Explore our articles and stay updated with the latest information!</p>
+
+    <div class="navbar">
+        <div>
+            <a href="/">Home</a>
+            <a href="/about-us/">About Us</a>
+            <a href="/articles/">Articles</a>
+            <a href="/contact-info/">Contact Info</a>
+        </div>
+        <a href="/logout/" style="color: red;">Logout</a>
+    </div>
+
+
+    <div class="header" style="background-image: url('/polls/photos/6.jpg');">
+        <h1>Welcome to the Home Page</h1>
+        <p>Discover the latest news, articles, and updates from Szczecin. Your go-to place for everything new and exciting in the city.</p>
+    </div>
+    <small size="1px">Photo source: <a href="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwszczecinie.pl%2Fdzieje-sie-w-dlugi-weekend-w-szczecinie-lawina-atrakcji-na-8-11-listopada-2024%2F49638&psig=AOvVaw2vkh_9WM-rM8rl3alb4r5K&ust=1736448948155000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCODDn8vm5ooDFQAAAAAdAAAAABAt">here</a></small>
+
+
+    <div class="latest-article">
+        <h2>Latest Article</h2>
+        <p><strong>New Flights and Railroad Connections from Szczecin</strong></p>
+        <p>Szczecin is becoming increasingly connected to the rest of Poland and Europe with new flights and railroad connections...</p>
+        <a href="/articles/5/">Read More</a>
+    </div>
 </body>
 </html>

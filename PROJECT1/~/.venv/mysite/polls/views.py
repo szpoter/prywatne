@@ -42,15 +42,13 @@ def articles(request):
     ]
     return render(request, 'articles.html', {'articles': articles_list})
 
-from django.shortcuts import render
-from django.http import HttpResponse
-import os
-
-import os
-from django.http import HttpResponse
+from django.shortcuts import render, get_object_or_404
 
 def article_detail(request, id):
-    # Mapowanie ID artykułów na pliki HTML
+
+    article = get_object_or_404(Article, id=id)
+
+
     articles_files = {
         1: 'argument1.html',
         2: 'argument2.html',
@@ -58,23 +56,15 @@ def article_detail(request, id):
         4: 'argument4.html',
         5: 'argument5.html',
     }
-    
-    file_name = articles_files.get(id, None)
+
+    file_name = articles_files.get(id)
     if file_name:
-        # Ścieżka do pliku HTML
-        file_path = os.path.join('polls', 'templates', 'articles', file_name)
-        
-        # Sprawdzenie, czy plik istnieje
-        if os.path.exists(file_path):
-            with open(file_path, 'r', encoding='utf-8') as f:
-                content = f.read()
-            return HttpResponse(content)
-        else:
-            return HttpResponse("<h1>Article not found</h1>", status=404)
+        return render(request, f'articles/{file_name}', {'article': article, 'id': id})
     else:
         return HttpResponse("<h1>Article not found</h1>", status=404)
+
     
-    from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404
 from .models import Article
 
 def about_us(request):
@@ -99,3 +89,28 @@ from django.contrib.auth import logout
 def logout_user(request):
     logout(request)
     return redirect('login')
+
+from django.shortcuts import get_object_or_404, redirect
+from .models import Article
+
+def like_article(request, id):
+    article = get_object_or_404(Article, id=id)
+    if request.user.is_authenticated:
+        if request.user in article.dislikes.all():
+            article.dislikes.remove(request.user)  
+        if request.user not in article.likes.all():
+            article.likes.add(request.user)
+        else:
+            article.likes.remove(request.user)
+    return redirect('article_detail', id=id)
+
+def dislike_article(request, id):
+    article = get_object_or_404(Article, id=id)
+    if request.user.is_authenticated:
+        if request.user in article.likes.all():
+            article.likes.remove(request.user) 
+        if request.user not in article.dislikes.all():
+            article.dislikes.add(request.user) 
+        else:
+            article.dislikes.remove(request.user)  
+    return redirect('article_detail', id=id)

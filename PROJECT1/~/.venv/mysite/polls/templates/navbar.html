@@ -2,7 +2,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #007bff;
+    background-color: #003165;
     color: white;
     padding: 10px 20px;
     font-family: 'Arial', sans-serif;
@@ -49,6 +49,16 @@
     background-color: #003d82;
 }
 
+.navbar a.logout {
+    color: #ff4d4d;
+    font-weight: bold;
+}
+
+.navbar a.logout:hover {
+    background: #cc0000;
+    transform: scale(1.05);
+}
+
 .logout-button {
     position: fixed;
     bottom: 20px;
@@ -57,7 +67,7 @@
     font-size: 16px;
     font-weight: bold;
     color: white;
-    background-color: #ff4d4d; /* Czerwony kolor */
+    background-color: #007bff;
     border: none;
     border-radius: 5px;
     text-decoration: none;
@@ -68,14 +78,37 @@
 }
 
 .logout-button:hover {
-    background-color: #cc0000; /* Ciemniejszy czerwony na hover */
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+.logout-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    background-color: #ff4d4d; 
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: background 0.3s, transform 0.3s;
+    z-index: 1000;
+}
+
+.logout-button:hover {
+    background-color: #cc0000; 
     transform: scale(1.05);
 }
 
 </style>
 <div class="navbar">
     <span>Hello, {{ user.username }}</span>
-    <a href="/about-us/">About Us</a>
+    <a href="/about-us/">About Me</a>
     <form action="/search-article/" method="get" class="search-form">
         <input type="text" name="query" placeholder="Search article">
         <button type="submit">Search</button>
@@ -87,4 +120,5 @@
 {% if user.is_authenticated %}
     <a href="/logout/" class="logout-button">Logout</a>
 {% endif %}
+
 

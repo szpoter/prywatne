@@ -1,11 +1,121 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
 <head>
     <title>Contact Info</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        .navbar {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+
+        .navbar a:hover {
+            text-decoration: underline;
+        }
+
+        .content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            margin: 50px 20px;
+        }
+
+        .content h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .contact-container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            width: 100%;
+            margin: 20px auto;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .contact-item img {
+            width: 30px;
+            height: 30px;
+            margin-right: 15px;
+        }
+
+        .contact-item a {
+            color: #007bff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .contact-item a:hover {
+            color: #0056b3;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            font-size: 14px;
+            color: #888;
+        }
+    </style>
 </head>
 <body>
+
     {% include 'navbar.html' %}
-    <h1>Contact Info</h1>
-    <p>Contact us at contact@szczecinnews.com.</p>
+
+
+    <div class="content">
+        <h1>Contact Info</h1>
+        <div class="contact-container">
+            <div class="contact-item">
+                <img src="/polls/icons/gm.png" alt="Gmail Icon">
+                <a>nikodem2287@gmail.com</a>
+            </div>
+            <div class="contact-item">
+                <img src="/polls/icons/ig.png" alt="Instagram Icon">
+                <a href="https://instagram.com/szz_spotter" target="_blank">@szz_spotter</a>
+            </div>
+            <div class="contact-item">
+                <img src="/polls/icons/fb.png" alt="Facebook Icon">
+                <a href="https://www.facebook.com/nikodem.kasprzak.10" target="_blank">https://www.facebook.com/nikodem.kasprzak.10</a>
+            </div>
+            <div class="contact-item">
+                <img src="/polls/icons/ph.png" alt="Phone Icon">
+                <a>+48 782777490</a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        2025 Nikodem Kasprzak
+    </footer>
 </body>
 </html>

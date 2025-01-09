@@ -1,7 +1,11 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Szczecin Goleniów Airport is Getting Renovated</title>
+    <div class="title-container" style="background-image: url('/polls/photos/4.jpg');">
+    </div>
+    <small size="1px">Photo source: <a href="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.propertydesign.pl%2Farchitektura%2F104%2Fport_lotniczy_szczecin_goleniow_zostanie_przebudowany_remont_potrwa_trzy_lata%2C47887.html&psig=AOvVaw1twT4Dxi19jJbqjEGs-Y2O&ust=1736444990914000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCMDu4OjX5ooDFQAAAAAdAAAAABAR">here</a></small>
+
     <style>
         body {
             font-family: 'Arial', sans-serif;
@@ -30,14 +34,19 @@
             padding: 20px;
         }
         h1 {
-            color: #333;
+            font-family: 'Georgia', 'Times New Roman', Times, serif;
+            font-size: 42px;
+            font-weight: bold;
+            line-height: 1.2;
+            letter-spacing: 0.5px;
             text-align: center;
-            font-size: 36px;
+            color: #333;
         }
         p {
             font-size: 18px;
             line-height: 1.6;
             color: #555;
+            text-align: justify;
         }
         a.back-link {
             text-decoration: none;
@@ -50,18 +59,88 @@
         a.back-link:hover {
             color: #0056b3;
         }
+
+        .like-count, .dislike-count {
+            font-size: 18px;
+            margin-right: 20px;
+            font-weight: bold;
+        }
+
+        .like-count {
+            color: green;
+        }
+
+        .dislike-count {
+            color: red;
+        }
+
+        .like-dislike-buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .like-dislike-buttons form {
+            margin: 0;
+        }
+
+        .like-dislike-buttons button {
+            background-color: #f4f4f4;
+            border: 1px solid #ddd;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .like-dislike-buttons button:hover {
+            background-color: #e0e0e0;
+        }
+
+        .title-container {
+            background-image: url("{% static 'polls/photos/4.jpg' %}");
+            background-size: cover;
+            background-position: center;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+        h5 {
+            font-family: 'Georgia', 'Times New Roman', Times, serif;
+            font-size: 21px;
+            font-weight: bold;
+            line-height: 1.2;
+            letter-spacing: 0.5px;
+            text-align: center;
+            color: #333;
+        }
+
     </style>
 </head>
 <body>
 
     <div class="container">
         <h1>Szczecin Goleniów Airport is Getting Renovated</h1>
-        <p>Szczecin Goleniów Airport, the gateway to the West Pomeranian region, is undergoing a major renovation to improve its infrastructure and accommodate growing passenger traffic. The project, which represents a significant investment in the region's transportation network, aims to modernize the airport's facilities and enhance the overall travel experience.</p>
-        <p>The renovation plan includes expanding the terminal building to provide more space for check-in counters, security screenings, and waiting areas. A new baggage handling system will be installed to streamline operations and reduce waiting times for passengers. Additionally, upgrades to the runway and taxiways will enable the airport to handle larger aircraft, paving the way for new international routes.</p>
-        <p>Passengers can also look forward to improved amenities, including more shops, restaurants, and lounges. The airport's design will emphasize sustainability, with energy-efficient systems, solar panels, and enhanced waste management practices.</p>
-        <p>Local authorities have highlighted the importance of the renovation in boosting Szczecin's connectivity and attracting tourists and investors. With new direct flights and a growing number of passengers, the airport is poised to play a vital role in the region's economic development.</p>
-        <p>The renovation is expected to be completed by 2025, marking a new chapter in Szczecin Goleniów Airport's history and solidifying its position as a key transportation hub in Poland.</p>
+<p> Szczecin-Goleniów Airport, the primary air transport hub for northwestern Poland, is undergoing a major renovation aimed at expanding its capacity and modernizing its facilities. The project, which began in mid-2023, is a response to the growing demand for air travel in the region and the need to provide passengers with a world-class experience. Once completed, the renovated airport is expected to significantly enhance Szczecin's connectivity with other parts of Poland and Europe. </p> <h5>Project Overview</h5> <p> The renovation project is one of the most ambitious infrastructure undertakings in the region. Spearheaded by the Polish Airports State Enterprise (PPL) and co-financed by EU structural funds, the initiative aims to double the airport’s annual passenger capacity from 1.2 million to 2.5 million. This substantial increase is expected to accommodate the growing number of tourists and business travelers choosing Szczecin as their destination. </p> <p> Key elements of the renovation include the expansion of the passenger terminal, construction of additional taxiways, and modernization of the runway to handle larger aircraft. The project also includes significant upgrades to security and baggage handling systems, ensuring compliance with international aviation standards. </p> <h5>Timeline and Progress</h5> <p> Construction officially began in June 2023, following months of detailed planning and environmental assessments. The project is being carried out in multiple phases to ensure that the airport remains operational throughout the renovation. Key milestones include the completion of the expanded terminal building by late 2024 and the modernization of the runway by mid-2025. Full project completion is expected by early 2026. </p> <p> Despite minor delays caused by supply chain challenges, the renovation remains on track. Contractors have reported significant progress in areas such as terminal expansion and the installation of new technological systems. </p> <h5>Future Capacity and Facilities</h5> <p> The renovated Szczecin-Goleniów Airport will be capable of handling up to 2.5 million passengers annually, a significant improvement over its current capacity. The expanded terminal will feature additional check-in counters, larger security screening areas, and more boarding gates. Modern lounges, retail spaces, and dining options will enhance the passenger experience, making the airport a more attractive gateway for international and domestic travelers. </p> <p> The runway upgrades will allow the airport to accommodate larger aircraft, enabling direct connections to a wider range of destinations. This improvement is particularly important for Szczecin's economic development, as it supports the city’s role as a business hub and tourist destination. </p> <h5>Economic and Regional Impact</h5> <p> The renovation of Szczecin-Goleniów Airport is expected to have a profound impact on the region. By improving connectivity, the airport will attract more tourists and encourage business growth. Local authorities estimate that the project could create hundreds of new jobs in the aviation, tourism, and hospitality sectors. </p> <p> Additionally, the enhanced airport infrastructure is expected to bolster Szczecin’s competitiveness in the global market. With faster and more reliable air connections, the city can position itself as a key player in international trade and investment. </p> <h5>A Vision for the Future</h5> <p> The Szczecin-Goleniów Airport renovation is a forward-looking project that aligns with the region’s long-term development goals. By investing in state-of-the-art infrastructure and expanding its capacity, Szczecin is preparing for a future of increased mobility and economic growth. </p> <p> Once completed, the renovated airport will serve as a symbol of Szczecin’s ambition to become a modern, accessible, and dynamic city. For residents and visitors alike, it promises to be a gateway to new opportunities and experiences. </p>
         <a href="/articles/" class="back-link">Back to Articles</a>
+    </div>
+    <div class="like-dislike-container">
+        <div>
+            <span class="like-count">👍 Likes: {{ article.total_likes }}</span>
+            <span class="dislike-count">👎 Dislikes: {{ article.total_dislikes }}</span>
+        </div>
+        <div class="like-dislike-buttons">
+            <form action="{% url 'like_article' id %}" method="post">
+                {% csrf_token %}
+                <button type="submit">👍 Like</button>
+            </form>
+            <form action="{% url 'dislike_article' id %}" method="post">
+                {% csrf_token %}
+                <button type="submit">👎 Dislike</button>
+            </form>
+        </div>
     </div>
 </body>
 </html>

@@ -1,82 +1,63 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>{{ content.title }}</title>
+    <title>{{ article.title }}</title>
     <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f9;
-        }
-        .container {
+        .article-container {
             max-width: 800px;
-            margin: 50px auto;
-            background-color: #ffffff;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            margin: 0 auto;
             padding: 20px;
+            font-family: Arial, sans-serif;
         }
-        h1 {
-            color: #333;
-            text-align: center;
+
+        .article-title {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 10px;
         }
+
         .article-content {
-            margin-top: 20px;
-            display: none;
-            font-size: 16px;
-            line-height: 1.5;
-            color: #555;
+            margin-bottom: 20px;
         }
-        .toggle-button {
-            display: block;
-            margin: 20px auto;
+
+        .like-dislike-buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .like-dislike-buttons form {
+            margin: 0;
+        }
+
+        .like-dislike-buttons button {
+            background-color: #f4f4f4;
+            border: 1px solid #ddd;
             padding: 10px 20px;
-            background-color: #007bff;
-            color: white;
-            font-size: 16px;
-            font-weight: bold;
-            border: none;
-            border-radius: 6px;
+            border-radius: 5px;
             cursor: pointer;
-            transition: background-color 0.3s;
         }
-        .toggle-button:hover {
-            background-color: #0056b3;
-        }
-        a.back-link {
-            text-decoration: none;
-            color: #007bff;
-            font-weight: bold;
-            margin-top: 20px;
-            display: inline-block;
-        }
-        a.back-link:hover {
-            color: #0056b3;
+
+        .like-dislike-buttons button:hover {
+            background-color: #e0e0e0;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>{{ content.title }}</h1>
-        <button class="toggle-button" onclick="toggleContent()">Show Article</button>
-        <div class="article-content" id="articleContent">
-            <p>{{ content.text }}</p>
+    {% include 'navbar.html' %}
+    <div class="article-container">
+        <div class="article-title">{{ article.title }}</div>
+        <div class="article-content">{{ article.content }}</div>
+        <div class="like-dislike-buttons">
+            <form action="{% url 'like_article' article.id %}" method="post">
+                {% csrf_token %}
+                <button type="submit">👍 Like ({{ article.total_likes }})</button>
+            </form>
+            <form action="{% url 'dislike_article' article.id %}" method="post">
+                {% csrf_token %}
+                <button type="submit">👎 Dislike ({{ article.total_dislikes }})</button>
+            </form>
         </div>
-        <a href="/articles/" class="back-link">Back to Articles</a>
+        <a href="{% url 'articles' %}">Back to Articles</a>
     </div>
-    <script>
-        function toggleContent() {
-            const content = document.getElementById('articleContent');
-            const button = document.querySelector('.toggle-button');
-            if (content.style.display === 'block') {
-                content.style.display = 'none';
-                button.textContent = 'Show Article';
-            } else {
-                content.style.display = 'block';
-                button.textContent = 'Hide Article';
-            }
-        }
-    </script>
 </body>
 </html>

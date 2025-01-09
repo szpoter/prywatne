@@ -1,26 +1,164 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Buildings Are Rising at Kępa Parnicka</title>
+    <div class="title-container" style="background-image: url('/polls/photos/2.jpg');">
+    </div>
+    <small size="1px">Photo source: <a href="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.budnex.pl%2Fszczecin%2Fmieszkania%2Fsedina_apartamenty___etap_i.html&psig=AOvVaw0upexOwUsVGw4Gg6d-tGpk&ust=1736444829143000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCNjtmJ7X5ooDFQAAAAAdAAAAABAR">here</a></small>
+
     <style>
-        body { font-family: 'Arial', sans-serif; margin: 0; padding: 0; background-color: #f4f4f9; }
-        .header { position: fixed; top: 10px; left: 10px; font-size: 16px; color: #ffffff; background-color: #007bff; padding: 5px 15px; border-radius: 5px; font-weight: bold; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); }
-        .container { max-width: 800px; margin: 50px auto; background-color: #ffffff; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); padding: 20px; }
-        h1 { color: #333; text-align: center; font-size: 36px; }
-        p { font-size: 18px; line-height: 1.6; color: #555; }
-        a.back-link { text-decoration: none; color: #007bff; font-weight: bold; margin-top: 20px; display: inline-block; transition: color 0.3s; }
-        a.back-link:hover { color: #0056b3; }
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+        .header {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            font-size: 16px;
+            color: #ffffff;
+            background-color: #000000;
+            padding: 5px 15px;
+            border-radius: 5px;
+            font-weight: bold;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+        }
+        h1 {
+            font-family: 'Georgia', 'Times New Roman', Times, serif;
+            font-size: 42px;
+            font-weight: bold;
+            line-height: 1.2;
+            letter-spacing: 0.5px;
+            text-align: center;
+            color: #333;
+        }
+        h5 {
+            font-family: 'Georgia', 'Times New Roman', Times, serif;
+            font-size: 21px;
+            font-weight: bold;
+            line-height: 1.2;
+            letter-spacing: 0.5px;
+            text-align: center;
+            color: #333;
+        }
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+            color: #555;
+            text-align: justify;
+        }
+        a.back-link {
+            text-decoration: none;
+            color: #007bff;
+            font-weight: bold;
+            margin-top: 20px;
+            display: inline-block;
+            transition: color 0.3s;
+        }
+        a.back-link:hover {
+            color: #0056b3;
+        }
+
+        .like-count, .dislike-count {
+            font-size: 18px;
+            margin-right: 20px;
+            font-weight: bold;
+        }
+
+        .like-count {
+            color: green;
+        }
+
+        .dislike-count {
+            color: red;
+        }
+
+        .like-dislike-buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .like-dislike-buttons form {
+            margin: 0;
+        }
+
+        .like-dislike-buttons button {
+            background-color: #f4f4f4;
+            border: 1px solid #ddd;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .like-dislike-buttons button:hover {
+            background-color: #e0e0e0;
+        }
+
+        .title-container {
+            background-image: url("{% static 'polls/photos/2.jpg' %}");
+            background-size: cover;
+            background-position: center;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
     </style>
 </head>
 <body>
 
     <div class="container">
         <h1>Buildings Are Rising at Kępa Parnicka</h1>
-        <p>Kępa Parnicka, one of Szczecin's most promising development zones, is undergoing a dramatic transformation. The area, historically known for its industrial roots, is now home to a flurry of construction activity, with residential and commercial projects taking shape.</p>
-        <p>Developers have unveiled ambitious plans to turn Kępa Parnicka into a modern urban hub. The first phase includes luxury apartments overlooking the Oder River, complemented by retail spaces and recreational areas. Designed with sustainability in mind, these buildings will feature energy-efficient systems, green roofs, and community spaces to enhance the quality of urban living.</p>
-        <p>The city has invested heavily in upgrading infrastructure in the area, including new roads, improved public transport links, and pedestrian-friendly walkways. Local residents have expressed excitement about the new opportunities the development will bring, from employment to cultural activities.</p>
+        <h5>The Transformation of Kępa Parnicka and Surrounding Areas in Szczecin</h5> <p> Kępa Parnicka, a serene island in Szczecin surrounded by the Oder River, is undergoing a remarkable transformation. Once an industrial zone with limited appeal for residents or businesses, it is now at the heart of one of Szczecin’s most ambitious urban renewal projects. Developers, backed by the city’s strategic vision, are reshaping the area into a modern hub for living, working, and leisure.
+            The island’s proximity to the city center and its breathtaking views of the river have made it a prime location for new developments. While historically a logistical zone for river transport, Kępa Parnicka is now evolving into a vibrant district that merges contemporary architecture with the area’s natural charm.
+            
+            </p> <h5>A Hub of Modern Development</h5> <p> The revitalization of Kępa Parnicka is a testament to Szczecin’s commitment to sustainable urban planning. Developers have envisioned a district where cutting-edge residential buildings blend seamlessly with green spaces, cultural venues, and retail hubs. One of the most significant aspects of this transformation is the integration of the island with Szczecin’s broader urban landscape. New bridges, improved road networks, and enhanced public transport connections have made Kępa Parnicka accessible while maintaining its unique identity.
+            Key projects on the island include luxury waterfront apartments that offer stunning views of the Oder River. These developments prioritize eco-friendly designs, with features such as energy-efficient buildings, rainwater collection systems, and landscaped rooftop gardens. Public spaces, such as promenades and parks, encourage residents and visitors to enjoy the island’s natural beauty.
+            
+            </p> <h5>Commercial and Mixed-Use Spaces</h5> <p> While much of the focus has been on residential developments, the rise of mixed-use spaces on Kępa Parnicka signals a broader vision for the island. Modern office complexes and coworking hubs cater to Szczecin’s growing base of startups and tech companies. Restaurants and boutique shops are designed to enhance the community experience, creating a space where residents can live, work, and socialize without leaving the district.
+            Cultural venues, such as galleries and performance spaces, are also part of the revitalization. These additions aim to turn Kępa Parnicka into a cultural hotspot, attracting both locals and tourists. The inclusion of waterfront promenades and leisure areas further enhances the island’s appeal, making it a destination for relaxation and entertainment.
+            
+            </p> <h5>Challenges in Development</h5> <p> Transforming Kępa Parnicka has not been without its challenges. The island’s location on the Oder River has necessitated careful planning to address environmental concerns. Flood-resistant infrastructure and sustainable building practices are at the forefront of these efforts, ensuring that development does not compromise the island’s ecological balance.
+            Another significant challenge has been the preservation of the island’s industrial heritage. Developers have worked to incorporate historical structures into new projects, creating a balance between modernity and the island’s past. This approach not only preserves Szczecin’s history but also gives the area a unique character that sets it apart from other districts.
+            
+            Infrastructure development has also required significant investment. Bridges connecting the island to the rest of Szczecin, as well as upgraded roadways and public transport options, are crucial for supporting the growing population. These projects have faced delays and budget overruns but are now nearing completion.
+            
+            </p> <h5>The Future of Kępa Parnicka</h5> <p> As the development of Kępa Parnicka progresses, the island is poised to become one of Szczecin’s most sought-after neighborhoods. By 2030, it is expected to host a thriving community of residents, businesses, and visitors, all drawn to its unique combination of natural beauty, modern amenities, and cultural vibrancy.
+            Kępa Parnicka’s transformation is more than just a local project; it reflects Szczecin’s broader ambition to modernize while preserving its historical roots. The island stands as a symbol of the city’s forward-thinking approach to urban development and its ability to adapt to the needs of a changing world.
+            
+            </p><p>
+            Kępa Parnicka’s transformation is more than just a local project; it reflects Szczecin’s broader ambition to modernize while preserving its historical roots. The island stands as a symbol of the city’s forward-thinking approach to urban development and its ability to adapt to the needs of a changing world.</p>
         <p>Kępa Parnicka's transformation represents Szczecin's forward-thinking approach to urban planning, blending modern architecture with respect for the city's historical heritage.</p>
         <a href="/articles/" class="back-link">Back to Articles</a>
+    </div>
+    <div class="like-dislike-container">
+        <div>
+            <span class="like-count">👍 Likes: {{ article.total_likes }}</span>
+            <span class="dislike-count">👎 Dislikes: {{ article.total_dislikes }}</span>
+        </div>
+        <div class="like-dislike-buttons">
+            <form action="{% url 'like_article' id %}" method="post">
+                {% csrf_token %}
+                <button type="submit">👍 Like</button>
+            </form>
+            <form action="{% url 'dislike_article' id %}" method="post">
+                {% csrf_token %}
+                <button type="submit">👎 Dislike</button>
+            </form>
+        </div>
     </div>
 </body>
 </html>

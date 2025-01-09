@@ -1,7 +1,11 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
 <head>
-    <title>New Flights and Railroad Connections from Szczecin</title>
+    <div class="title-container" style="background-image: url('/polls/photos/5.jpg');">
+    </div>
+    <small size="1px">Photo source: <a href="https://www.google.com/url?sa=i&url=https%3A%2F%2Fcorporate.ryanair.com%2Finformacje%2Fryanair-sun-zmienia-sie-w-buzz%2F&psig=AOvVaw0j47FNhoPBwr4jevWPISE2&ust=1736445031136000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCLDYtf7X5ooDFQAAAAAdAAAAABAE">here</a></small>
+
     <style>
         body {
             font-family: 'Arial', sans-serif;
@@ -55,16 +59,88 @@
         a.back-link:hover {
             color: #0056b3;
         }
+
+        .like-count, .dislike-count {
+            font-size: 18px;
+            margin-right: 20px;
+            font-weight: bold;
+        }
+
+        .like-count {
+            color: green;
+        }
+
+        .dislike-count {
+            color: red;
+        }
+
+        .like-dislike-buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .like-dislike-buttons form {
+            margin: 0;
+        }
+
+        .like-dislike-buttons button {
+            background-color: #f4f4f4;
+            border: 1px solid #ddd;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .like-dislike-buttons button:hover {
+            background-color: #e0e0e0;
+        }
+
+        .title-container {
+            background-image: url("{% static 'polls/photos/5.jpg' %}");
+            background-size: cover;
+            background-position: center;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+        h5 {
+            font-family: 'Georgia', 'Times New Roman', Times, serif;
+            font-size: 21px;
+            font-weight: bold;
+            line-height: 1.2;
+            letter-spacing: 0.5px;
+            text-align: center;
+            color: #333;
+        }
+
     </style>
 </head>
 <body>
 
     <div class="container">
         <h1>New Flights and Railroad Connections from Szczecin</h1>
-        <p>Szczecin is becoming increasingly connected to the rest of Poland and Europe through a series of new flight routes and expanded railroad services. The Goleniów Airport recently announced direct flights to several major European destinations, including Amsterdam, Munich, and Copenhagen, catering to both business travelers and tourists.</p>
-        <p>In addition to new flight routes, the Polish State Railways (PKP) has unveiled plans to improve Szczecin's train connectivity. High-speed rail services linking Szczecin to Poznań and Warsaw are currently under development, with travel times expected to be significantly reduced. This will not only benefit commuters but also attract more tourists to Szczecin's vibrant cultural and historical landmarks.</p>
-        <p>The government has also pledged funding to modernize Szczecin's main train station, integrating it with local public transport to enhance accessibility. This dual investment in air and rail transport marks a significant step towards establishing Szczecin as a major transportation hub in the region.</p>
+        <p> Szczecin is making significant strides in transportation development, introducing new rail and air connections to improve the city’s accessibility and boost convenience for both residents and tourists. With high-speed Pendolino services to Warsaw and additional flight routes from Szczecin-Goleniów Airport, the city is becoming a key travel hub in northwestern Poland. </p> <h5>High-Speed Rail: Szczecin to Warsaw in Just Over 4 Hours</h5> <p> In January 2025, PKP Intercity officially launched a new direct Pendolino service connecting Szczecin Główny with Warszawa Wschodnia. The journey now takes just 4 hours and 20 minutes, making it one of the fastest rail connections between the northwest and the capital. </p> <p> The Pendolino departs Szczecin Główny at 6:00 AM, reaching Warsaw at 10:20 AM. On the return trip, the train leaves Warszawa Wschodnia at 5:00 PM, arriving in Szczecin at 9:20 PM. Key stops along the route include Stargard, Poznań Główny, and Warszawa Centralna, ensuring access to major cities along the way. This service has been praised for its comfort, speed, and reliability, attracting both business and leisure travelers. </p> <h5>Modernization and New Flight Connections at Szczecin-Goleniów Airport</h5> <p> Szczecin-Goleniów Airport is undergoing a significant transformation to accommodate rising passenger numbers. Renovation of the terminal began in March 2025, focusing on expanding the departure halls (Schengen and Non-Schengen zones) to 3,500 m² and the arrival hall to 1,000 m². Additionally, the airport plans to increase the number of security checkpoints from 2 to 5, improving the flow of passengers during peak hours. </p> <p> Among the newly introduced connections, flights to Kraków began in April 2025, providing a convenient domestic link between Szczecin and Małopolska. These flights, operated twice weekly, have already become a popular choice for both tourists and business travelers. Furthermore, Ryanair launched a new connection to Dublin in February 2025, catering to the growing Polish diaspora in Ireland. LOT Polish Airlines has also expanded its service to Warsaw, now offering up to 25 flights per week, ensuring better flexibility and connectivity for passengers. </p> <h5>Impact of New Connections</h5> <p> The new rail and air connections are expected to significantly enhance Szczecin’s role as a transportation hub, fostering tourism and business opportunities. The Pendolino service, in particular, has been hailed as a game-changer, drastically reducing travel time and offering a competitive alternative to driving or flying. This service strengthens ties between Szczecin and Warsaw, benefiting both commuters and occasional travelers. </p> <p> Meanwhile, the improved Szczecin-Goleniów Airport and its expanded network of flights are set to boost the region's economy. The addition of domestic and international routes enhances Szczecin’s appeal as a destination for both leisure and business travelers, encouraging growth in sectors such as tourism, trade, and real estate. </p> <h5>A Bright Future for Szczecin’s Connectivity</h5> <p> The ongoing investments in Szczecin’s transportation network underscore the city’s commitment to modernization and accessibility. With faster and more convenient travel options by rail and air, Szczecin is poised to strengthen its position as a major hub in Poland and beyond. These developments not only improve mobility but also create new opportunities for economic and cultural exchange, securing Szczecin’s place on the map as a dynamic and forward-thinking city. </p>
         <a href="/articles/" class="back-link">Back to Articles</a>
+    </div>
+    <div class="like-dislike-container">
+        <div>
+            <span class="like-count">👍 Likes: {{ article.total_likes }}</span>
+            <span class="dislike-count">👎 Dislikes: {{ article.total_dislikes }}</span>
+        </div>
+        <div class="like-dislike-buttons">
+            <form action="{% url 'like_article' id %}" method="post">
+                {% csrf_token %}
+                <button type="submit">👍 Like</button>
+            </form>
+            <form action="{% url 'dislike_article' id %}" method="post">
+                {% csrf_token %}
+                <button type="submit">👎 Dislike</button>
+            </form>
+        </div>
     </div>
 </body>
 </html>
