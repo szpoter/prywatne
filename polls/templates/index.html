@@ -1,138 +1,99 @@
+{% load static %}
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Szczecin Times</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome</title>
     <style>
         body {
             margin: 0;
             padding: 0;
-            font-family: 'Georgia', 'Times New Roman', serif;
-            background: linear-gradient(to bottom, #fdfdfd, #eaeaea);
-            color: #333;
-            text-align: center;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-image: url('/polls/photos/6.jpg'); /* Ustaw zdjęcie jako tło */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: white;
+        }
+
+        .overlay {
+            background-color: rgba(0, 0, 0, 0.7); /* Przyciemnienie tła */
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
         }
 
         .container {
-            margin: 10% auto;
-            max-width: 800px;
-            padding: 20px;
-            background: #fff;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
+            position: relative;
+            z-index: 2;
             text-align: center;
+            max-width: 400px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1); /* Przezroczyste tło */
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
         }
 
         h1 {
-            font-size: 48px;
-            font-weight: bold;
-            color: #222;
+            font-size: 36px;
             margin-bottom: 20px;
-            letter-spacing: 1px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
         }
 
-        h2 {
-            font-size: 20px;
-            font-weight: 300;
-            color: #555;
-            margin-bottom: 40px;
-            line-height: 1.6;
+        p {
+            font-size: 18px;
+            margin-bottom: 30px;
         }
 
-        a {
+        .btn {
             display: inline-block;
             margin: 10px;
-            padding: 12px 30px;
+            padding: 12px 25px;
             font-size: 18px;
-            font-weight: bold;
-            text-decoration: none;
             color: white;
-            background: #007bff;
-            border-radius: 30px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            transition: background 0.3s, transform 0.3s;
+            background-color: #007bff;
+            text-decoration: none;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s, transform 0.3s;
         }
 
-        a:hover {
-            background: #0056b3;
+        .btn:hover {
+            background-color: #0056b3;
             transform: scale(1.05);
         }
 
-        footer {
-            margin-top: 50px;
-            font-size: 14px;
-            color: #888;
-        }
         @media (max-width: 768px) {
-            body {
-                padding: 5px;
-            }
-        
-            .container {
-                padding: 10px;
-                max-width: 100%;
-            }
-        
             h1 {
-                font-size: 24px;
+                font-size: 28px;
             }
-        
-            h2 {
-                font-size: 20px;
-            }
-        
-            h5 {
+
+            p {
                 font-size: 16px;
             }
-        
-            .like-dislike-container {
-                flex-direction: column;
-                align-items: center;
-            }
-        
-            .like-dislike-buttons button {
-                width: 100%;
-                margin: 5px 0;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            h1 {
-                font-size: 18px;
-            }
-        
-            h2 {
+
+            .btn {
                 font-size: 16px;
-            }
-        
-            h5 {
-                font-size: 14px;
-            }
-        
-            .like-dislike-container span {
-                font-size: 14px;
-            }
-        
-            .navbar {
-                flex-direction: column;
-                align-items: center;
-            }
-        
-            .navbar a {
-                font-size: 14px;
-                margin: 5px 0;
+                padding: 10px 20px;
             }
         }
     </style>
 </head>
 <body>
+    <div class="overlay"></div>
     <div class="container">
-        <h1>Szczecin Times</h1>
-        <h2>Discover the latest news and developments shaping the heart of Szczecin. From infrastructure projects to urban growth, stay informed with us!</h2>
-        <a href="/login/">Login</a>
-        <a href="/register/">Register</a>
+        <h1>Welcome to Szczecin Times</h1>
+        <p>Stay updated with the latest news from Szczecin. Please log in or register to continue.</p>
+        <a href="{% url 'login' %}" class="btn">Login</a>
+        <a href="{% url 'register' %}" class="btn">Register</a>
     </div>
-    <footer>
-        &copy; 2025 Szczecin Times.
-    </footer>
 </body>
 </html>
