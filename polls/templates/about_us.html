@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>About Me</title>
+    <title>Contact Info</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -145,14 +145,14 @@
                 margin: 5px 0;
             }
         }
-
+        
         .top-right-image {
             position: absolute;
             top: 80px;
             left: 80px;
             width: 30%;
             height: auto;
-            max-width: 100%;
+            max-width: 40%;
             border: 2px solid #ddd;
             box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
         }
@@ -175,20 +175,22 @@
     </style>
 </head>
 <body>
+
     {% include 'navbar.html' %}
 
-    <img src="/polls/photos/about_us_photo.jpg" alt="About Us Image" class="top-right-image">
-
     <div class="content">
-        <h1>About Me</h1>
+        <h1>Contact Info</h1>
         <div class="contact-container">
-
-        <p>
-           Hello, welcome to my page. My name is Nikodem I study Programming in SCI Szczecin and here I'll share news from our beloved city.
-           Szczecin is very important for me as I was born and raised here. I decided to create a website for englishspeakers as I haven't seen any type of news about the city in english.
-            Every important information from Szczecin and nearby cities will be shared in here. I hope that You'll enjoy my articles and for any questions please contact me <a src="contact_info.html">here</a>
-        </p>
+            <div class="contact-item">
+                <img src="/polls/icons/hd.png" alt="hand">
+                <a>Hello, welcome to my page. My name is Nikodem I study Programming in SCI Szczecin and here I'll share news from our beloved city.
+                    Szczecin is very important for me as I was born and raised here. I decided to create a website for englishspeakers as I haven't seen any type of news about the city in english.
+                     Every important information from Szczecin and nearby cities will be shared in here. I hope that You'll enjoy my articles and for any questions please contact me <a src="contact_info.html">here</a>
+            </div>
+        </div>
     </div>
-</div>
 </body>
 </html>
+
+        
+
