@@ -78,14 +78,20 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
-import dj_database_url
+
 
 DATABASES = {
-     'default': dj_database_url.config(conn_max_age=600)
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'your_database',  # Nazwa bazy danych
+        'USER': 'your_username',  # Użytkownik bazy danych
+        'PASSWORD': 'your_password',  # Hasło do bazy danych
+        'HOST': 'host.render.com',  # Host bazy danych
+        'PORT': '5432',  # Port PostgreSQL
+    }
 }
 
-STATIC_URL = '/static/'
-STATIC_ROOT = BASE_DIR / 'staticfiles'
+
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
