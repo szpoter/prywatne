@@ -62,6 +62,7 @@
             color: #007bff;
             font-weight: bold;
             margin-top: 20px;
+            margin-bottom: 20px;
             display: inline-block;
             transition: color 0.3s;
         }
@@ -179,6 +180,7 @@
     </style>
 </head>
 <body>
+    {% include 'navbar.html' %}
 
     <div class="container">
         <h1>Buildings Are Rising at Kępa Parnicka</h1>
@@ -206,7 +208,7 @@
         <footer>© 2025 Nikodem Kasprzak
             <small>Photo source: <a href="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.budnex.pl%2Fszczecin%2Fmieszkania%2Fsedina_apartamenty___etap_i.html&psig=AOvVaw0upexOwUsVGw4Gg6d-tGpk&ust=1736444829143000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCNjtmJ7X5ooDFQAAAAAdAAAAABAR">here</a></small>
         </footer>
-        
+    </div>
         <div class="like-dislike-container">
             <div>
                 <span class="like-count">👍 Likes: {{ article.total_likes }}</span>
@@ -222,6 +224,6 @@
                     <button type="submit">👎 Dislike</button>
                 </form>
             </div>
-        </div>
+        
 </body>
 </html>
