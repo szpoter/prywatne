@@ -86,11 +86,11 @@ url = urlparse(os.getenv('DATABASE_URL'))
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': url.path[1:],
-        'USER': url.username,
-        'PASSWORD': url.password,
-        'HOST': url.hostname,
-        'PORT': url.port,
+        'NAME': 'szczecin_times',
+        'USER': 'szczecin_times_user',
+        'PASSWORD': 'E1BZ4mHXOnQmfTBU2uE1Wl9SQjVtZ5sC',
+        'HOST': "dpg-ctvs5krtq21c73aj2o10-a",
+        'PORT': '5432',
     }
 }
 
