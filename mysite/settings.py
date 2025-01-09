@@ -85,14 +85,11 @@ url = urlparse(os.getenv('DATABASE_URL'))
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'szczecin_times',
-        'USER': 'szczecin_times_user',
-        'PASSWORD': 'E1BZ4mHXOnQmfTBU2uE1Wl9SQjVtZ5sC',
-        'HOST': "dpg-ctvs5krtq21c73aj2o10-a",
-        'PORT': '5432',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
 
 
 
