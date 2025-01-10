@@ -1,26 +1,58 @@
-<style>.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #003165;
-    color: white;
-    padding: 10px 20px;
-    font-family: 'Arial', sans-serif;
-    font-size: 18px;
-}
-
-.navbar a {
-    color: white;
-    text-decoration: none;
-    padding: 10px 15px;
-    transition: background 0.3s, transform 0.3s;
-}
-
-.navbar a:hover {
-    background: #0056b3;
-    border-radius: 5px;
-    transform: scale(1.05);
-}
+<style>/* General Navbar Styles */
+    .navbar {
+        background-color: #007bff;
+        color: white;
+        padding: 10px 20px;
+        display: flex;
+        justify-content: center; /* Center content */
+        align-items: center;
+        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+        overflow: hidden; /* Prevent content overflow */
+        flex-wrap: wrap; /* Allows wrapping if necessary */
+        width: 100%; /* Ensure it stays within the viewport */
+        box-sizing: border-box; /* Includes padding in width calculation */
+    }
+    
+    .navbar a {
+        color: white;
+        text-decoration: none;
+        margin: 0 10px;
+        font-weight: bold;
+        font-size: 18px; /* Default size for desktop */
+    }
+    
+    .navbar a:hover {
+        text-decoration: underline;
+    }
+    
+    /* Media Queries for Mobile Devices */
+    @media (max-width: 768px) {
+        .navbar {
+            padding: 5px 10px;
+            flex-wrap: wrap; /* Allows wrapping if content overflows */
+            justify-content: center;
+        }
+    
+        .navbar a {
+            margin: 5px; /* Adjust margin for smaller screens */
+            font-size: 16px; /* Slightly smaller font size */
+        }
+    }
+    
+    @media (max-width: 480px) {
+        .navbar {
+            flex-direction: row; /* Ensures horizontal alignment */
+            flex-wrap: nowrap; /* Prevent wrapping */
+            padding: 5px;
+            justify-content: center;
+        }
+    
+        .navbar a {
+            margin: 3px; /* Further reduce margins */
+            font-size: 14px; /* Smaller font size for very small screens */
+        }
+    }
+    
 
 .search-form {
     display: flex;
@@ -155,30 +187,8 @@
     }
 
 }
-@media (max-width: 768px) {
-    .navbar {
-        padding: 5px 10px; /* Reduce padding */
-        justify-content: center; /* Center content */
-    }
 
-    .navbar a {
-        margin: 0 5px; /* Reduce margin between links */
-        font-size: 16px; /* Slightly smaller font size */
-    }
-}
 
-@media (max-width: 480px) {
-    .navbar {
-        flex-direction: row; /* Ensure links stay in a horizontal line */
-        flex-wrap: nowrap; /* Prevent wrapping */
-        padding: 5px; /* Minimal padding for small screens */
-    }
-
-    .navbar a {
-        margin: 0 3px; /* Further reduce margins */
-        font-size: 14px; /* Smaller font size for very small screens */
-    }
-}
 </style>
 <div class="navbar">
     <span>Hello, {{ user.username }}</span>
