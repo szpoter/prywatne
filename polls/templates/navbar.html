@@ -105,72 +105,77 @@
     transform: scale(1.05);
 }
 @media (max-width: 768px) {
-    body {
-        padding: 5px;
-    }
-
-    .container {
-        padding: 10px;
-        max-width: 100%;
-    }
-
-    h1 {
-        font-size: 24px;
-    }
-
-    h2 {
-        font-size: 20px;
-    }
-
-    h5 {
-        font-size: 16px;
-    }
-
-    .like-dislike-container {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .like-dislike-buttons button {
-        width: 100%;
-        margin: 5px 0;
-    }
-}
-
-@media (max-width: 480px) {
-    h1 {
-        font-size: 18px;
-    }
-
-    h2 {
-        font-size: 16px;
-    }
-
-    h5 {
-        font-size: 14px;
-    }
-
-    .like-dislike-container span {
-        font-size: 14px;
-    }
-
+    /* Adjust navbar for mobile view */
     .navbar {
+        display: flex;
         flex-direction: column;
         align-items: center;
+        background-color: #003366;
+        padding: 20px 0;
+        gap: 10px;
     }
 
+    /* Reorder and style navbar items */
     .navbar a {
-        font-size: 14px;
-        margin: 5px 0;
+        color: white;
+        font-size: 18px;
+        margin: 10px 0;
+        text-align: center;
+        text-decoration: none;
+        padding: 10px;
+        width: 100%;
+        max-width: 300px;
+        background-color: #004080;
+        border-radius: 5px;
+        font-weight: bold;
+        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+        transition: background-color 0.3s ease;
+    }
+
+    .navbar a:hover {
+        background-color: #0056b3;
+    }
+
+    /* Place the search bar at the top */
+    .navbar .search-bar {
+        order: -1;
+        width: 100%;
+        max-width: 300px;
+        margin: 0 auto;
+    }
+
+    .navbar .search-bar input[type="text"] {
+        width: 70%;
+        padding: 10px;
+        border-radius: 5px 0 0 5px;
+        border: none;
+    }
+
+    .navbar .search-bar button {
+        width: 30%;
+        padding: 10px;
+        border-radius: 0 5px 5px 0;
+        background-color: #007bff;
+        color: white;
+        font-weight: bold;
+        border: none;
+        cursor: pointer;
+    }
+
+    .navbar .search-bar button:hover {
+        background-color: #0056b3;
     }
 }
+
 </style>
 <div class="navbar">
-    <span>Hello, {{ user.username }}</span>
+    <div class="search-bar">
     <form action="/search-article/" method="get" class="search-form">
         <input type="text" name="query" placeholder="Search article">
         <button type="submit">Search</button>
     </form>
+    </div>
+    <span>Hello, {{ user.username }}</span>
     <a href="/about-us/">About Me</a>
     <a href="/articles/">Articles</a>
     <a href="/contact-info/">Contact Info</a>
