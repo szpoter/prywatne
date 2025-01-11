@@ -108,7 +108,7 @@
     /* Adjust navbar for mobile view */
     .navbar {
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         align-items: center;
         background-color: #003366;
         padding: 20px 0;
@@ -169,13 +169,13 @@
 
 </style>
 <div class="navbar">
+    <span>Hello, {{ user.username }}</span>
     <div class="search-bar">
     <form action="/search-article/" method="get" class="search-form">
         <input type="text" name="query" placeholder="Search article">
         <button type="submit">Search</button>
     </form>
     </div>
-    <span>Hello, {{ user.username }}</span>
     <a href="/about-us/">About Me</a>
     <a href="/articles/">Articles</a>
     <a href="/contact-info/">Contact Info</a>
