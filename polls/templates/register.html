@@ -111,6 +111,17 @@
             animation: spinner 0.6s infinite linear;
         }
     </style>
+    <script>
+        function validateForm() {
+            var password = document.getElementById("password").value;
+            var confirmPassword = document.getElementById("confirm_password").value;
+            if (password !== confirmPassword) {
+                alert("Passwords do not match.");
+                return false;
+            }
+            return true;
+        }
+    </script>
 </head>
 <body>
     <div class="container">
@@ -118,12 +129,14 @@
         {% if error %}
             <p class="error">{{ error }}</p>
         {% endif %}
-        <form method="POST">
+        <form method="POST" onsubmit="return validateForm()">
             {% csrf_token %}
             <label for="username">Username:</label>
             <input type="text" name="username" id="username" placeholder="Enter your username" required>
             <label for="password">Password:</label>
             <input type="password" name="password" id="password" placeholder="Enter your password" required>
+            <label for="confirm_password">Confirm Password:</label>
+            <input type="password" name="confirm_password" id="confirm_password" placeholder="Confirm your password" required>
             <button type="submit">Register</button>
         </form>
         <footer>© 2025 Nikodem Kasprzak
